@@ -13,25 +13,27 @@ func createFile() (*os.File, error) {
 		return nil, err
 	}
 
-	data := []byte("hii jeevan")
+	data := []byte("   ")
 	f.Write(data)
 
 	return f, nil
 }
 
 func openFile() (int, error) {
-	f, err := os.Open("hello.txt")
-	if err != nil {
-		return 0, err
-	}
+	// f, err := os.Open("hello.txt")
+	// if err != nil {
+	// 	return 0, err
+	// }
 
 	//container
-	data := make([]byte, 100)
+	// data := make([]byte, 100)
 
-	//try read data and store in byte format
-	_, err = f.Read(data)
+	// //try read data and store in byte format
+	// _, err = f.Rea(data)
+
+	data, err := os.ReadFile("hello.txt")
 	if err != nil {
-		fmt.Println("hiiii")
+
 		return 0, err
 
 	}
@@ -41,7 +43,7 @@ func openFile() (int, error) {
 	words := string(data)
 	fmt.Println(words)
 
-	wordtrim := strings.Trim(words, " ")
+	// wordtrim := strings.Trim(words, " ")
 
 	//it store data in slice format and  its splits at every whitw space
 	content := strings.Fields(words)
@@ -68,18 +70,19 @@ func main() {
 		fmt.Println("There is some error in data format")
 		return
 	}
+	// fmt.Println(out)
 	//try to count number of words in a file
-	if out == 0 {
-		fmt.Println("file is empty")
-	} else {
-		fmt.Println("number of words is : ", out)
-	}
+	// if out == 0 {
+	// 	fmt.Println("file is empty")
+	// } else {
+	fmt.Println("number of words is : ", out)
+	// }
 
-	error := removefile("hello.txt")
-	if error != nil {
-		fmt.Println("File removed succesfully")
-		return
-	}
-	fmt.Println("file not preset")
+	// error := removefile("hello.txt")
+	// if error != nil {
+	// 	fmt.Println("File removed succesfully")
+	// 	return
+	// }
+	// fmt.Println("file not preset")
 
 }

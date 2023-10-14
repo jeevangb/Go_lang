@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"math/rand"
+	"os"
 )
 
 func main() {
@@ -10,6 +11,7 @@ func main() {
 	var num int
 	fmt.Scan(&num)
 	guess(num)
+	main()
 }
 
 func guess(num int) {
@@ -20,5 +22,6 @@ func guess(num int) {
 		fmt.Println("number is too low")
 	} else {
 		fmt.Println("number is equal")
+		os.Exit(1)
 	}
 }

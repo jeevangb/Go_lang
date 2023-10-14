@@ -7,7 +7,7 @@ import (
 
 func main() {
 	var num float32
-	fmt.Println("Enter temp in celsius")
+	fmt.Println("Enter temp in Fahrenheit")
 	fmt.Scan(&num)
 	res := temperature.Temp(num)
 	fmt.Println(res)

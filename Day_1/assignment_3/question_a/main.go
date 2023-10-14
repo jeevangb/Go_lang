@@ -10,9 +10,11 @@ func main() {
 	s := calculator.Sub(30, 20)
 	m := calculator.Mul(7, 7)
 	d := calculator.Div(25, 5)
+	ss := calculator.Square(3)
 
 	fmt.Println(a)
 	fmt.Println(s)
 	fmt.Println(m)
 	fmt.Println(d)
+	fmt.Println(ss)
 }

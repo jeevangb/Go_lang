@@ -19,3 +19,6 @@ func Mul(a int, b int) int {
 func Div(a int, b int) int {
 	return a / b
 }
+func Square(a int) int {
+	return a * a
+}
